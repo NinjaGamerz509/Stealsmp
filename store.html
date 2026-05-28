@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store — StealSMP</title>
+  <meta name="description" content="Buy ranks and keys for StealSMP. LifeSteal & BoxPvP ranks with exclusive perks. Prices in USD, INR and PKR." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://stealsmp.fun/store.html" />
+  <meta property="og:title" content="Store — StealSMP" />
+  <meta property="og:description" content="Get exclusive ranks and keys for StealSMP Minecraft server." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/store.css" />
+</head>
+<body>
+
+  <div id="page-transition"></div>
+
+  <button id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="side-nav" aria-label="Main navigation">
+    <div class="nav-logo">
+      <img src="assets/logo.png" alt="StealSMP Logo" />
+      <span class="nav-logo-text">StealSMP</span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html"><span class="material-icons">home</span> Home</a>
+      <a class="nav-link" data-page="features.html" href="features.html"><span class="material-icons">auto_awesome</span> Features</a>
+      <a class="nav-link" data-page="store.html" href="store.html"><span class="material-icons">storefront</span> Store</a>
+      <a class="nav-link" data-page="rules.html" href="rules.html"><span class="material-icons">gavel</span> Rules</a>
+      <a class="nav-link" data-page="boxpvp.html" href="boxpvp.html"><span class="material-icons">sports_kabaddi</span> BoxPvP</a>
+    </div>
+    <div class="nav-footer">
+      <a class="nav-social-btn" href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener"><span class="material-icons" style="font-size:16px">forum</span> Discord</a>
+      <a class="nav-social-btn" href="store.html"><span class="material-icons" style="font-size:16px">storefront</span> Store</a>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <div class="main-content">
+    <div class="store-wrapper">
+
+      <!-- ─── STORE SIDEBAR ─── -->
+      <aside class="store-sidebar">
+        <div class="sidebar-title">Categories</div>
+
+        <!-- LifeSteal Category -->
+        <div class="sidebar-cat" id="cat-lifesteal">
+          <button class="sidebar-cat-btn" onclick="toggleCat('lifesteal')">
+            <span class="material-icons cat-icon">favorite</span>
+            LifeSteal
+            <span class="material-icons cat-arrow">expand_more</span>
+          </button>
+          <div class="sidebar-sub" id="sub-lifesteal">
+
+            <!-- Ranks sub -->
+            <button class="sidebar-sub-btn" onclick="toggleSub('ls-ranks')">
+              <span class="material-icons" style="font-size:16px;color:var(--orange)">military_tech</span>
+              Ranks
+              <span class="material-icons sub-arrow">expand_more</span>
+            </button>
+            <div class="sidebar-items" id="sub-ls-ranks">
+              <button class="sidebar-item-btn" onclick="showItem('icecube')"><span class="sidebar-item-dot"></span>IceCube</button>
+              <button class="sidebar-item-btn" onclick="showItem('demon')"><span class="sidebar-item-dot"></span>Demon</button>
+              <button class="sidebar-item-btn" onclick="showItem('mythic')"><span class="sidebar-item-dot"></span>Mythic</button>
+              <button class="sidebar-item-btn" onclick="showItem('star')"><span class="sidebar-item-dot"></span>Star</button>
+            </div>
+
+            <!-- Keys sub -->
+            <button class="sidebar-sub-btn" onclick="toggleSub('ls-keys')">
+              <span class="material-icons" style="font-size:16px;color:var(--orange)">vpn_key</span>
+              Keys
+              <span class="material-icons sub-arrow">expand_more</span>
+            </button>
+            <div class="sidebar-items" id="sub-ls-keys">
+              <button class="sidebar-item-btn" onclick="showItem('key-onyx')"><span class="sidebar-item-dot"></span>Onyx Key</button>
+              <button class="sidebar-item-btn" onclick="showItem('key-rift')"><span class="sidebar-item-dot"></span>Rift Key</button>
+              <button class="sidebar-item-btn" onclick="showItem('key-stealer')"><span class="sidebar-item-dot"></span>Stealer Key</button>
+              <button class="sidebar-item-btn" onclick="showItem('key-bundle')"><span class="sidebar-item-dot"></span>10x Bundle</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BoxPvP Category -->
+        <div class="sidebar-cat" id="cat-boxpvp">
+          <button class="sidebar-cat-btn" onclick="toggleCat('boxpvp')">
+            <span class="material-icons cat-icon">sports_kabaddi</span>
+            BoxPvP
+            <span class="material-icons cat-arrow">expand_more</span>
+          </button>
+          <div class="sidebar-sub" id="sub-boxpvp">
+
+            <!-- Ranks sub -->
+            <button class="sidebar-sub-btn" onclick="toggleSub('bp-ranks')">
+              <span class="material-icons" style="font-size:16px;color:var(--orange)">military_tech</span>
+              Ranks
+              <span class="material-icons sub-arrow">expand_more</span>
+            </button>
+            <div class="sidebar-items" id="sub-bp-ranks">
+              <button class="sidebar-item-btn" onclick="showItem('bp-vip')"><span class="sidebar-item-dot"></span>VIP</button>
+              <button class="sidebar-item-btn" onclick="showItem('bp-mvp')"><span class="sidebar-item-dot"></span>MVP</button>
+            </div>
+
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ─── STORE CONTENT ─── -->
+      <section class="store-content">
+
+        <!-- Welcome -->
+        <div class="item-panel active" id="panel-welcome">
+          <div class="store-welcome">
+            <span class="material-icons">storefront</span>
+            <h2>Welcome to the Store</h2>
+            <p>Select a category from the sidebar to browse ranks and keys.</p>
+            <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="btn-primary" style="margin-top:8px">
+              <span class="material-icons" style="font-size:18px">forum</span> Purchase via Discord
+            </a>
+          </div>
+        </div>
+
+        <!-- ── LIFESTEAL RANKS ── -->
+
+        <!-- IceCube -->
+        <div class="item-panel" id="panel-icecube">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>IceCube</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/rank-icecube.png" alt="IceCube Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Rank</div>
+                <div class="item-name">ICECUBE</div>
+                <div class="item-prices">
+                  <span class="price-badge">$1</span>
+                  <span class="price-badge">₹100</span>
+                  <span class="price-badge">250 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">label</span> ICECUBE Prefix</li>
+                <li class="perk-item"><span class="material-icons">storefront</span> Up to 6 Auction House listings</li>
+                <li class="perk-item"><span class="material-icons">inventory_2</span> Up to 2 Player Vault access</li>
+                <li class="perk-item"><span class="material-icons">cottage</span> Up to 4 Home Slots</li>
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">water</span> Access to /depth</li>
+                <li class="perk-item"><span class="material-icons">carpenter</span> Access to /workbench</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to IceCube Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 3x Onyx Keys <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demon -->
+        <div class="item-panel" id="panel-demon">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Demon</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap"><img src="assets/images/rank-demon.png" alt="Demon Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Rank</div>
+                <div class="item-name">DEMON</div>
+                <div class="item-prices">
+                  <span class="price-badge">$2</span>
+                  <span class="price-badge">₹200</span>
+                  <span class="price-badge">500 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">label</span> DEMON Prefix</li>
+                <li class="perk-item"><span class="material-icons">storefront</span> Up to 10 Auction House listings</li>
+                <li class="perk-item"><span class="material-icons">inventory_2</span> Up to 4 Player Vault access</li>
+                <li class="perk-item"><span class="material-icons">cottage</span> Up to 6 Home Slots</li>
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">water</span> Access to /depth</li>
+                <li class="perk-item"><span class="material-icons">inventory</span> Access to /enderchest</li>
+                <li class="perk-item"><span class="material-icons">carpenter</span> Access to /workbench</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to Demon Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 1x Rift Key <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mythic -->
+        <div class="item-panel" id="panel-mythic">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Mythic</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap"><img src="assets/images/rank-mythic.png" alt="Mythic Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Rank</div>
+                <div class="item-name">MYTHIC</div>
+                <div class="item-prices">
+                  <span class="price-badge">$4</span>
+                  <span class="price-badge">₹350</span>
+                  <span class="price-badge">1000 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">label</span> MYTHIC Prefix</li>
+                <li class="perk-item"><span class="material-icons">storefront</span> Up to 15 Auction House listings</li>
+                <li class="perk-item"><span class="material-icons">inventory_2</span> Up to 6 Player Vault access</li>
+                <li class="perk-item"><span class="material-icons">cottage</span> Up to 8 Home Slots</li>
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">accessibility_new</span> Access to /crawl</li>
+                <li class="perk-item"><span class="material-icons">water</span> Access to /depth</li>
+                <li class="perk-item"><span class="material-icons">delete_sweep</span> Access to /disposal</li>
+                <li class="perk-item"><span class="material-icons">inventory</span> Access to /enderchest</li>
+                <li class="perk-item"><span class="material-icons">carpenter</span> Access to /workbench</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to Mythic Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 3x Rift Keys <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Star -->
+        <div class="item-panel" id="panel-star">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Star</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap"><img src="assets/images/rank-star.png" alt="Star Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Rank</div>
+                <div class="item-name">STAR</div>
+                <div class="item-prices">
+                  <span class="price-badge">$7</span>
+                  <span class="price-badge">₹670</span>
+                  <span class="price-badge">2000 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">label</span> STAR Prefix</li>
+                <li class="perk-item"><span class="material-icons">storefront</span> Up to 20 Auction House listings</li>
+                <li class="perk-item"><span class="material-icons">inventory_2</span> Up to 10 Player Vault access</li>
+                <li class="perk-item"><span class="material-icons">cottage</span> Up to 14 Home Slots</li>
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">hotel</span> Access to /lay</li>
+                <li class="perk-item"><span class="material-icons">accessibility_new</span> Access to /crawl</li>
+                <li class="perk-item"><span class="material-icons">water</span> Access to /depth</li>
+                <li class="perk-item"><span class="material-icons">compress</span> Access to /condense</li>
+                <li class="perk-item"><span class="material-icons">delete_sweep</span> Access to /disposal</li>
+                <li class="perk-item"><span class="material-icons">build</span> Access to /anvil</li>
+                <li class="perk-item"><span class="material-icons">inventory</span> Access to /enderchest</li>
+                <li class="perk-item"><span class="material-icons">carpenter</span> Access to /workbench</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to Star Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 1x Stealer Key <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── LIFESTEAL KEYS ── -->
+
+        <!-- Onyx Key -->
+        <div class="item-panel" id="panel-key-onyx">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Keys</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Onyx Key</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/key-onyx.png" alt="Onyx Key" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Key</div>
+                <div class="item-name">ONYX KEY</div>
+                <div class="item-prices">
+                  <span class="price-badge">$0.50</span>
+                  <span class="price-badge">₹50</span>
+                  <span class="price-badge">120 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Key Info</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 1x Onyx Crate Key</li>
+                <li class="perk-item"><span class="material-icons">redeem</span> Open the Onyx Crate for exclusive loot</li>
+                <li class="perk-item"><span class="material-icons">star</span> Contains gear, items &amp; rare rewards</li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rift Key -->
+        <div class="item-panel" id="panel-key-rift">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Keys</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Rift Key</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/key-rift.png" alt="Rift Key" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Key</div>
+                <div class="item-name">RIFT KEY</div>
+                <div class="item-prices">
+                  <span class="price-badge">$1</span>
+                  <span class="price-badge">₹100</span>
+                  <span class="price-badge">250 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Key Info</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 1x Rift Crate Key</li>
+                <li class="perk-item"><span class="material-icons">redeem</span> Open the Rift Crate for rare rewards</li>
+                <li class="perk-item"><span class="material-icons">star</span> Better loot than Onyx — more exclusive drops</li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stealer Key -->
+        <div class="item-panel" id="panel-key-stealer">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Keys</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Stealer Key</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/key-stealer.png" alt="Stealer Key" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Key</div>
+                <div class="item-name">STEALER KEY</div>
+                <div class="item-prices">
+                  <span class="price-badge">$2</span>
+                  <span class="price-badge">₹200</span>
+                  <span class="price-badge">500 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Key Info</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 1x Stealer Crate Key</li>
+                <li class="perk-item"><span class="material-icons">redeem</span> Open the Stealer Crate — top tier loot</li>
+                <li class="perk-item"><span class="material-icons">star</span> The rarest drops &amp; most powerful rewards</li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10x Bundle -->
+        <div class="item-panel" id="panel-key-bundle">
+          <div class="store-breadcrumb">LifeSteal <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Keys</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>10x Bundle</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/key-bundle.png" alt="10x Key Bundle" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">LifeSteal Key Bundle</div>
+                <div class="item-name">10x BUNDLE</div>
+                <div class="item-prices">
+                  <span class="price-badge">$1</span>
+                  <span class="price-badge">₹100</span>
+                  <span class="price-badge">250 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Bundle Info</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 10x Keys of any type</li>
+                <li class="perk-item"><span class="material-icons">redeem</span> Best value key pack available</li>
+                <li class="perk-item"><span class="material-icons">star</span> More opens = more chances for rare loot</li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BOXPVP RANKS ── -->
+
+        <!-- BoxPvP VIP -->
+        <div class="item-panel" id="panel-bp-vip">
+          <div class="store-breadcrumb">BoxPvP <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>VIP</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/rank-vip.webp" alt="VIP Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">BoxPvP Rank</div>
+                <div class="item-name">VIP</div>
+                <div class="item-prices">
+                  <span class="price-badge">$2</span>
+                  <span class="price-badge">₹200</span>
+                  <span class="price-badge">500 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">inventory</span> Access to /enderchest</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">hotel</span> Access to /lay</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to VIP Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 2x Mythic Keys <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BoxPvP MVP -->
+        <div class="item-panel" id="panel-bp-mvp">
+          <div class="store-breadcrumb">BoxPvP <span class="material-icons" style="font-size:12px">chevron_right</span> <span>Ranks</span> <span class="material-icons" style="font-size:12px">chevron_right</span> <span>MVP</span></div>
+          <div class="item-card card-hover">
+            <div class="item-card-top">
+              <div class="item-img-wrap square"><img src="assets/images/rank-mvp.webp" alt="MVP Rank" /></div>
+              <div class="item-info">
+                <div class="item-category-badge">BoxPvP Rank</div>
+                <div class="item-name">MVP</div>
+                <div class="item-prices">
+                  <span class="price-badge">$7</span>
+                  <span class="price-badge">₹670</span>
+                  <span class="price-badge">2000 PKR</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-card-bottom">
+              <div class="perks-title">Included Perks</div>
+              <ul class="perks-list">
+                <li class="perk-item"><span class="material-icons">face</span> Access to /hat</li>
+                <li class="perk-item"><span class="material-icons">inventory</span> Access to /enderchest</li>
+                <li class="perk-item"><span class="material-icons">chair</span> Access to /sit</li>
+                <li class="perk-item"><span class="material-icons">hotel</span> Access to /lay</li>
+                <li class="perk-item"><span class="material-icons">sports_martial_arts</span> Access to /bellyflop</li>
+                <li class="perk-item"><span class="material-icons">backpack</span> Access to MVP Kit</li>
+                <li class="perk-item"><span class="material-icons">vpn_key</span> 5x Mythic Keys <span class="perk-onetime">(1 time)</span></li>
+              </ul>
+              <a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener" class="buy-btn">
+                <span class="material-icons">shopping_cart</span> Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="assets/logo.png" alt="StealSMP" />
+          <span class="footer-brand-name">StealSMP</span>
+        </div>
+        <p class="footer-desc">India's most thrilling Lifesteal &amp; BoxPvP Minecraft server.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="boxpvp.html">BoxPvP</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Community</div>
+        <ul class="footer-links">
+          <li><a href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener">Discord Server</a></li>
+          <li><a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener">Store Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 StealSMP. All rights reserved.</span>
+      <span class="footer-ip">play.stealsmp.fun:19132</span>
+    </div>
+  </footer>
+
+  <a id="back-to-top" aria-label="Back to top"><span class="material-icons">keyboard_arrow_up</span></a>
+
+  <script src="js/global.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

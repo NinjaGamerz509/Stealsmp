@@ -1,0 +1,430 @@
+/* ─── HERO SECTION ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 40px 60px;
+}
+
+/* Animated background grid */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPan 20s linear infinite;
+}
+@keyframes gridPan {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 30px rgba(255,107,0,0.6));
+  animation: logoFloat 4s ease-in-out infinite;
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 30px rgba(255,107,0,0.6)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 50px rgba(255,184,0,0.8)); }
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 7vw, 76px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+.hero-title span {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 50%, var(--orange) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SERVER STATUS CARD ─── */
+.status-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  border: 1px solid var(--dark-border);
+  background: var(--dark-card);
+  transition: all 0.5s ease;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s ease both;
+  min-width: 320px;
+  justify-content: center;
+}
+.status-card.online {
+  border-color: rgba(34,197,94,0.4);
+  background: rgba(34,197,94,0.06);
+  box-shadow: 0 0 30px rgba(34,197,94,0.12);
+}
+.status-card.offline {
+  border-color: rgba(255,59,59,0.4);
+  background: rgba(255,59,59,0.06);
+  box-shadow: 0 0 30px rgba(255,59,59,0.12);
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--text-muted);
+}
+.status-card.online .status-dot {
+  background: var(--green-status);
+  box-shadow: 0 0 8px var(--green-status);
+  animation: pulse-green 2s ease-in-out infinite;
+}
+.status-card.offline .status-dot {
+  background: var(--red-status);
+  box-shadow: 0 0 8px var(--red-status);
+}
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 6px var(--green-status); }
+  50% { box-shadow: 0 0 16px var(--green-status), 0 0 30px rgba(34,197,94,0.3); }
+}
+.status-info { text-align: left; }
+.status-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.status-ip {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.status-card.online .status-ip { color: var(--green-status); }
+.status-card.offline .status-ip { color: var(--red-status); }
+.status-players {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.status-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--dark-border);
+}
+.status-count { text-align: center; }
+.status-count-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.status-count-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ─── STATS ROW ─── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--dark-border);
+  border: 1px solid var(--dark-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 60px 40px 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stat-item {
+  background: var(--dark-card);
+  padding: 28px 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+.stat-item:hover { background: var(--dark-card2); }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ─── SEASON CARD ─── */
+.season-section {
+  padding: 80px 40px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.season-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.season-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+}
+.season-card::after {
+  content: 'S4';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255,107,0,0.04);
+  pointer-events: none;
+  line-height: 1;
+}
+.season-info {}
+.season-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,107,0,0.12);
+  border: 1px solid rgba(255,107,0,0.3);
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.season-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+.season-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.season-timer-wrap { text-align: right; }
+.season-timer-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.season-timer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.timer-unit { text-align: center; }
+.timer-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.timer-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.timer-sep {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--orange);
+  opacity: 0.5;
+  align-self: flex-start;
+  margin-top: 2px;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 0.5; } 50% { opacity: 0; } }
+
+/* ─── QUICK LINKS ─── */
+.quick-section {
+  padding: 80px 40px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.quick-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 14px;
+  padding: 28px 28px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.quick-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,107,0,0.04), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.quick-card:hover::after { opacity: 1; }
+.quick-card:hover {
+  border-color: rgba(255,107,0,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255,107,0,0.1);
+}
+.quick-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,107,0,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.quick-icon .material-icons { color: var(--orange); font-size: 24px; }
+.quick-card-title {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.quick-card-desc { font-size: 13px; color: var(--text-muted); }
+.quick-arrow {
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.quick-card:hover .quick-arrow { color: var(--orange); transform: translateX(4px); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .hero { padding: 100px 20px 60px; }
+  .stats-row { margin: 40px 20px 0; grid-template-columns: 1fr; }
+  .season-section, .quick-section { padding: 60px 20px 0; }
+  .season-card { flex-direction: column; align-items: flex-start; }
+  .season-timer { justify-content: flex-start; }
+  .season-timer-wrap { text-align: left; }
+  .quick-grid { grid-template-columns: 1fr; }
+  .status-card { min-width: unset; width: 100%; }
+}

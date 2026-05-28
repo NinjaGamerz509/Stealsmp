@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | StealSMP</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/global.css" />
+  <style>
+    .notfound-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .notfound-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,107,0,0.06), transparent 60%);
+    }
+    .notfound-num {
+      font-family: var(--font-display);
+      font-size: clamp(100px, 20vw, 200px);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.15;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      pointer-events: none;
+      user-select: none;
+    }
+    .notfound-content { position: relative; z-index: 1; }
+    .notfound-icon { font-size: 56px; color: rgba(255,107,0,0.3); margin-bottom: 20px; }
+    .notfound-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .notfound-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 360px;
+    }
+    .notfound-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <div id="page-transition"></div>
+
+  <button id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="side-nav" aria-label="Main navigation">
+    <div class="nav-logo">
+      <img src="assets/logo.png" alt="StealSMP Logo" />
+      <span class="nav-logo-text">StealSMP</span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html"><span class="material-icons">home</span> Home</a>
+      <a class="nav-link" data-page="features.html" href="features.html"><span class="material-icons">auto_awesome</span> Features</a>
+      <a class="nav-link" data-page="store.html" href="store.html"><span class="material-icons">storefront</span> Store</a>
+      <a class="nav-link" data-page="rules.html" href="rules.html"><span class="material-icons">gavel</span> Rules</a>
+      <a class="nav-link" data-page="boxpvp.html" href="boxpvp.html"><span class="material-icons">sports_kabaddi</span> BoxPvP</a>
+    </div>
+    <div class="nav-footer">
+      <a class="nav-social-btn" href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener"><span class="material-icons" style="font-size:16px">forum</span> Discord</a>
+      <a class="nav-social-btn" href="store.html"><span class="material-icons" style="font-size:16px">storefront</span> Store</a>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <main class="main-content">
+    <div class="notfound-page">
+      <div class="notfound-num">404</div>
+      <div class="notfound-content">
+        <span class="material-icons notfound-icon">explore_off</span>
+        <h1 class="notfound-title">Page Not Found</h1>
+        <p class="notfound-desc">Looks like this chunk hasn't loaded yet. The page you're looking for doesn't exist.</p>
+        <div class="notfound-actions">
+          <a href="index.html" class="btn-primary">
+            <span class="material-icons" style="font-size:18px">home</span> Back to Home
+          </a>
+          <a href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener" class="btn-secondary">
+            <span class="material-icons" style="font-size:18px">forum</span> Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/global.js"></script>
+</body>
+</html>

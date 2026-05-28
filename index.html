@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StealSMP — The Ultimate Lifesteal Minecraft Server</title>
+  <meta name="description" content="Join StealSMP — India's most thrilling Lifesteal & BoxPvP Minecraft server. Steal hearts, dominate the leaderboard, and survive. IP: play.stealsmp.fun" />
+  <meta name="keywords" content="StealSMP, Minecraft server, Lifesteal SMP, BoxPvP, Minecraft India, play.stealsmp.fun, SMP server" />
+  <meta name="author" content="StealSMP" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://stealsmp.fun/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StealSMP — The Ultimate Lifesteal Minecraft Server" />
+  <meta property="og:description" content="Join StealSMP — India's most thrilling Lifesteal & BoxPvP Minecraft server. IP: play.stealsmp.fun" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stealsmp.fun/" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="StealSMP — Lifesteal Minecraft Server" />
+  <meta name="twitter:description" content="Steal hearts, dominate the leaderboard. Join StealSMP now!" />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "StealSMP",
+    "url": "https://stealsmp.fun",
+    "description": "India's ultimate Lifesteal and BoxPvP Minecraft server"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Page Transition Overlay -->
+  <div id="page-transition"></div>
+
+  <!-- Hamburger Button -->
+  <button id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Side Navigation -->
+  <nav id="side-nav" aria-label="Main navigation">
+    <div class="nav-logo">
+      <img src="assets/logo.png" alt="StealSMP Logo" />
+      <span class="nav-logo-text">StealSMP</span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" data-page="index.html" href="index.html">
+        <span class="material-icons">home</span> Home
+      </a>
+      <a class="nav-link" data-page="features.html" href="features.html">
+        <span class="material-icons">auto_awesome</span> Features
+      </a>
+      <a class="nav-link" data-page="store.html" href="store.html">
+        <span class="material-icons">storefront</span> Store
+      </a>
+      <a class="nav-link" data-page="rules.html" href="rules.html">
+        <span class="material-icons">gavel</span> Rules
+      </a>
+      <a class="nav-link" data-page="boxpvp.html" href="boxpvp.html">
+        <span class="material-icons">sports_kabaddi</span> BoxPvP
+      </a>
+    </div>
+    <div class="nav-footer">
+      <a class="nav-social-btn" href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener">
+        <span class="material-icons" style="font-size:16px">forum</span> Discord
+      </a>
+      <a class="nav-social-btn" href="store.html">
+        <span class="material-icons" style="font-size:16px">storefront</span> Store
+      </a>
+    </div>
+  </nav>
+  <div id="nav-overlay"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <img src="assets/logo.png" alt="StealSMP" class="hero-logo" />
+        <p class="hero-eyebrow">Season 4 • Now Live</p>
+        <h1 class="hero-title"><span>StealSMP</span></h1>
+        <p class="hero-subtitle">India's Ultimate Lifesteal &amp; BoxPvP Minecraft Experience</p>
+        <div class="hero-actions">
+          <a href="store.html" class="btn-primary">
+            <span class="material-icons" style="font-size:18px">storefront</span> Get Ranks
+          </a>
+          <a href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener" class="btn-secondary">
+            <span class="material-icons" style="font-size:18px">forum</span> Join Discord
+          </a>
+        </div>
+
+        <!-- Live Status Card -->
+        <div class="status-card" id="status-card">
+          <div class="status-dot" id="status-dot"></div>
+          <div class="status-info">
+            <div class="status-label" id="status-label">Checking status...</div>
+            <div class="status-ip">play.stealsmp.fun</div>
+            <div class="status-players" id="status-players">Port: 19132</div>
+          </div>
+          <div class="status-divider"></div>
+          <div class="status-count">
+            <div class="status-count-num" id="status-count">—</div>
+            <div class="status-count-label">Online</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num" id="stat-players">—</div>
+        <div class="stat-label">Players Online</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Current Season</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+    </div>
+
+    <!-- SEASON CARD -->
+    <section class="season-section">
+      <div class="season-card card-hover">
+        <div class="season-info">
+          <div class="season-badge">
+            <span class="material-icons" style="font-size:13px">whatshot</span> Active Season
+          </div>
+          <div class="season-title">Season 4</div>
+          <div class="season-desc">The grind continues — fight, steal, survive. S4 ends in approximately 2 months.</div>
+        </div>
+        <div class="season-timer-wrap">
+          <div class="season-timer-label">Time Remaining</div>
+          <div class="season-timer" id="season-timer">
+            <div class="timer-unit">
+              <div class="timer-num" id="t-days">--</div>
+              <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-sep">:</div>
+            <div class="timer-unit">
+              <div class="timer-num" id="t-hours">--</div>
+              <div class="timer-label">Hrs</div>
+            </div>
+            <div class="timer-sep">:</div>
+            <div class="timer-unit">
+              <div class="timer-num" id="t-mins">--</div>
+              <div class="timer-label">Mins</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section class="quick-section">
+      <div class="quick-grid">
+        <div class="quick-card card-hover" onclick="navigateTo('features.html')">
+          <div class="quick-icon"><span class="material-icons">auto_awesome</span></div>
+          <div>
+            <div class="quick-card-title">Server Features</div>
+            <div class="quick-card-desc">Explore what StealSMP has to offer</div>
+          </div>
+          <span class="material-icons quick-arrow">arrow_forward</span>
+        </div>
+        <div class="quick-card card-hover" onclick="navigateTo('store.html')">
+          <div class="quick-icon"><span class="material-icons">storefront</span></div>
+          <div>
+            <div class="quick-card-title">Store</div>
+            <div class="quick-card-desc">Ranks, keys &amp; exclusive perks</div>
+          </div>
+          <span class="material-icons quick-arrow">arrow_forward</span>
+        </div>
+        <div class="quick-card card-hover" onclick="navigateTo('rules.html')">
+          <div class="quick-icon"><span class="material-icons">gavel</span></div>
+          <div>
+            <div class="quick-card-title">Server Rules</div>
+            <div class="quick-card-desc">Play fair, stay banned-free</div>
+          </div>
+          <span class="material-icons quick-arrow">arrow_forward</span>
+        </div>
+        <div class="quick-card card-hover" onclick="navigateTo('boxpvp.html')">
+          <div class="quick-icon"><span class="material-icons">sports_kabaddi</span></div>
+          <div>
+            <div class="quick-card-title">BoxPvP</div>
+            <div class="quick-card-desc">Coming soon — launching June 1st!</div>
+          </div>
+          <span class="material-icons quick-arrow">arrow_forward</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="assets/logo.png" alt="StealSMP" />
+          <span class="footer-brand-name">StealSMP</span>
+        </div>
+        <p class="footer-desc">India's most thrilling Lifesteal &amp; BoxPvP Minecraft server. Steal hearts, dominate the leaderboard.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="boxpvp.html">BoxPvP</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Community</div>
+        <ul class="footer-links">
+          <li><a href="https://discord.gg/jCDZ2wP8vw" target="_blank" rel="noopener">Discord Server</a></li>
+          <li><a href="https://discord.gg/AA69CP2WXj" target="_blank" rel="noopener">Store Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 StealSMP. All rights reserved.</span>
+      <span class="footer-ip">play.stealsmp.fun:19132</span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a id="back-to-top" aria-label="Back to top">
+    <span class="material-icons">keyboard_arrow_up</span>
+  </a>
+
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
